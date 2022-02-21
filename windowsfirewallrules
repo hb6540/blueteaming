@@ -1,0 +1,5 @@
+New-NetFirewallRule -DisplayName 'SMB-Inbound' -Profile @('Domain', 'Private') -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('139', '445')
+New-NetFirewallRule -DisplayName 'ICMP-Inbound' -Direction Inbound -Protocol ICMPv4 -IcmpType 8 -Action Allow
+
+Enable-NetFirewallRule -DisplayName "SMB-Inbound"
+Disable-NetFirewallRule -DisplayName "SMB-Inbound"
